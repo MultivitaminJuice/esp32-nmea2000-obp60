@@ -209,6 +209,32 @@ FormattedData formatValue(GwApi::BoatValue *value, CommonData &commondata, bool 
         result.cvalue = rawvalue;
     }
     //########################################################
+    else if (value->getFormat() == "formatFixed1"){
+        if(usesimudata == false) {
+            snprintf(buffer, bsize, "%3.1f", value->value);
+            rawvalue = value->value;
+        }
+        else{
+            rawvalue = 8.0 + float(random(0, 10)) / 10.0;
+            snprintf(buffer, bsize, "%3.1f", rawvalue);
+        }
+        result.unit = "";
+        result.cvalue = rawvalue;
+    }
+    //########################################################
+    else if (value->getFormat() == "formatFixed2"){
+        if(usesimudata == false) {
+            snprintf(buffer, bsize, "%3.2f", value->value);
+            rawvalue = value->value;
+        }
+        else{
+            rawvalue = 8.0 + float(random(0, 100)) / 100.0;
+            snprintf(buffer, bsize, "%3.2f", rawvalue);
+        }
+        result.unit = "";
+        result.cvalue = rawvalue;
+    }
+    //########################################################
     else if (value->getFormat() == "formatCourse" || value->getFormat() == "formatWind"){
         double course = 0;
         if (usesimudata == false) {

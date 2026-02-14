@@ -1,0 +1,218 @@
+[
+    {
+      "name": "vicEnable",
+      "label": "Enable Victron BLE",
+      "type": "boolean",
+      "default": "false",
+      "description": "Scan Victron Instant Readout BLE advertisements and publish values to boatData",
+      "category": "Victron BLE",
+      "capabilities": { "obp60": "true" }
+    },
+    {
+      "name": "vicDev1Type",
+      "label": "Device 1 type",
+      "type": "list",
+      "default": "off",
+      "list": [
+        {"l":"off","v":"off"},
+        {"l":"solar","v":"solar"},
+        {"l":"shunt","v":"shunt"},
+        {"l":"inverter","v":"inverter"},
+        {"l":"dc-dc","v":"dcdc"},
+        {"l":"smart lithium","v":"smartLithium"},
+        {"l":"inverter rs","v":"inverterRs"},
+        {"l":"ac charger","v":"acCharger"},
+        {"l":"smart batt protect","v":"smartBatteryProtect"},
+        {"l":"lynx bms","v":"lynxBms"},
+        {"l":"multi rs","v":"multiRs"},
+        {"l":"ve.bus","v":"veBus"},
+        {"l":"dc energy meter","v":"dcEnergyMeter"},
+        {"l":"orion xs","v":"orionXs"}
+      ],
+      "description": "Select device type for slot 1 (enables MAC/Key fields)",
+      "category": "Victron Devices",
+      "capabilities": { "obp60": "true" }
+    },
+    {
+      "name": "vicDev1Mac",
+      "label": "Device 1 MAC",
+      "type": "String",
+      "default": "",
+      "condition": { "vicDev1Type": ["solar","shunt","inverter","dcdc","smartLithium","inverterRs","acCharger","smartBatteryProtect","lynxBms","multiRs","veBus","dcEnergyMeter","orionXs"] },
+      "description": "MAC address like C0:FF:EE:12:34:56",
+      "category": "Victron Devices",
+      "capabilities": { "obp60": "true" }
+    },
+    {
+      "name": "vicDev1Key",
+      "label": "Device 1 Bindkey",
+      "type": "String",
+      "default": "",
+      "condition": { "vicDev1Type": ["solar","shunt","inverter","dcdc","smartLithium","inverterRs","acCharger","smartBatteryProtect","lynxBms","multiRs","veBus","dcEnergyMeter","orionXs"] },
+      "description": "32 hex chars from VictronConnect (Instant Readout details)",
+      "category": "Victron Devices",
+      "capabilities": { "obp60": "true" }
+    },
+    {
+      "name": "vicDev2Type",
+      "label": "Device 2 type",
+      "type": "list",
+      "default": "off",
+      "list": [
+        {"l":"off","v":"off"},
+        {"l":"solar","v":"solar"},
+        {"l":"shunt","v":"shunt"},
+        {"l":"inverter","v":"inverter"},
+        {"l":"dc-dc","v":"dcdc"},
+        {"l":"smart lithium","v":"smartLithium"},
+        {"l":"inverter rs","v":"inverterRs"},
+        {"l":"ac charger","v":"acCharger"},
+        {"l":"smart batt protect","v":"smartBatteryProtect"},
+        {"l":"lynx bms","v":"lynxBms"},
+        {"l":"multi rs","v":"multiRs"},
+        {"l":"ve.bus","v":"veBus"},
+        {"l":"dc energy meter","v":"dcEnergyMeter"},
+        {"l":"orion xs","v":"orionXs"}
+      ],
+      "description": "Select device type for slot 2 (enables MAC/Key fields)",
+      "category": "Victron Devices",
+      "capabilities": { "obp60": "true" }
+    },
+    {
+      "name": "vicDev2Mac",
+      "label": "Device 2 MAC",
+      "type": "String",
+      "default": "",
+      "condition": { "vicDev2Type": ["solar","shunt","inverter","dcdc","smartLithium","inverterRs","acCharger","smartBatteryProtect","lynxBms","multiRs","veBus","dcEnergyMeter","orionXs"] },
+      "description": "MAC address like C0:FF:EE:12:34:56",
+      "category": "Victron Devices",
+      "capabilities": { "obp60": "true" }
+    },
+    {
+      "name": "vicDev2Key",
+      "label": "Device 2 Bindkey",
+      "type": "String",
+      "default": "",
+      "condition": { "vicDev2Type": ["solar","shunt","inverter","dcdc","smartLithium","inverterRs","acCharger","smartBatteryProtect","lynxBms","multiRs","veBus","dcEnergyMeter","orionXs"] },
+      "description": "32 hex chars from VictronConnect (Instant Readout details)",
+      "category": "Victron Devices",
+      "capabilities": { "obp60": "true" }
+    },
+    {
+      "name": "vicDev3Type",
+      "label": "Device 3 type",
+      "type": "list",
+      "default": "off",
+      "list": [
+        {"l":"off","v":"off"},
+        {"l":"solar","v":"solar"},
+        {"l":"shunt","v":"shunt"},
+        {"l":"inverter","v":"inverter"},
+        {"l":"dc-dc","v":"dcdc"},
+        {"l":"smart lithium","v":"smartLithium"},
+        {"l":"inverter rs","v":"inverterRs"},
+        {"l":"ac charger","v":"acCharger"},
+        {"l":"smart batt protect","v":"smartBatteryProtect"},
+        {"l":"lynx bms","v":"lynxBms"},
+        {"l":"multi rs","v":"multiRs"},
+        {"l":"ve.bus","v":"veBus"},
+        {"l":"dc energy meter","v":"dcEnergyMeter"},
+        {"l":"orion xs","v":"orionXs"}
+      ],
+      "description": "Select device type for slot 3 (enables MAC/Key fields)",
+      "category": "Victron Devices",
+      "capabilities": { "obp60": "true" }
+    },
+    {
+      "name": "vicDev3Mac",
+      "label": "Device 3 MAC",
+      "type": "String",
+      "default": "",
+      "condition": { "vicDev3Type": ["solar","shunt","inverter","dcdc","smartLithium","inverterRs","acCharger","smartBatteryProtect","lynxBms","multiRs","veBus","dcEnergyMeter","orionXs"] },
+      "description": "MAC address like C0:FF:EE:12:34:56",
+      "category": "Victron Devices",
+      "capabilities": { "obp60": "true" }
+    },
+    {
+      "name": "vicDev3Key",
+      "label": "Device 3 Bindkey",
+      "type": "String",
+      "default": "",
+      "condition": { "vicDev3Type": ["solar","shunt","inverter","dcdc","smartLithium","inverterRs","acCharger","smartBatteryProtect","lynxBms","multiRs","veBus","dcEnergyMeter","orionXs"] },
+      "description": "32 hex chars from VictronConnect (Instant Readout details)",
+      "category": "Victron Devices",
+      "capabilities": { "obp60": "true" }
+    },
+    {
+      "name": "vicDev4Type",
+      "label": "Device 4 type",
+      "type": "list",
+      "default": "off",
+      "list": [
+        {"l":"off","v":"off"},
+        {"l":"solar","v":"solar"},
+        {"l":"shunt","v":"shunt"},
+        {"l":"inverter","v":"inverter"},
+        {"l":"dc-dc","v":"dcdc"},
+        {"l":"smart lithium","v":"smartLithium"},
+        {"l":"inverter rs","v":"inverterRs"},
+        {"l":"ac charger","v":"acCharger"},
+        {"l":"smart batt protect","v":"smartBatteryProtect"},
+        {"l":"lynx bms","v":"lynxBms"},
+        {"l":"multi rs","v":"multiRs"},
+        {"l":"ve.bus","v":"veBus"},
+        {"l":"dc energy meter","v":"dcEnergyMeter"},
+        {"l":"orion xs","v":"orionXs"}
+      ],
+      "description": "Select device type for slot 4 (enables MAC/Key fields)",
+      "category": "Victron Devices",
+      "capabilities": { "obp60": "true" }
+    },
+    {
+      "name": "vicDev4Mac",
+      "label": "Device 4 MAC",
+      "type": "String",
+      "default": "",
+      "condition": { "vicDev4Type": ["solar","shunt","inverter","dcdc","smartLithium","inverterRs","acCharger","smartBatteryProtect","lynxBms","multiRs","veBus","dcEnergyMeter","orionXs"] },
+      "description": "MAC address like C0:FF:EE:12:34:56",
+      "category": "Victron Devices",
+      "capabilities": { "obp60": "true" }
+    },
+    {
+      "name": "vicDev4Key",
+      "label": "Device 4 Bindkey",
+      "type": "String",
+      "default": "",
+      "condition": { "vicDev4Type": ["solar","shunt","inverter","dcdc","smartLithium","inverterRs","acCharger","smartBatteryProtect","lynxBms","multiRs","veBus","dcEnergyMeter","orionXs"] },
+      "description": "32 hex chars from VictronConnect (Instant Readout details)",
+      "category": "Victron Devices",
+      "capabilities": { "obp60": "true" }
+    },
+    {
+      "name": "vicScanMs",
+      "label": "Scan interval (ms)",
+      "type": "number",
+      "default": "3000",
+      "description": "Restart scan every N ms (keeps memory stable)",
+      "category": "Victron BLE",
+      "capabilities": { "obp60": "true" }
+    },
+    {
+      "name": "vicActiveScan",
+      "label": "Active BLE scan",
+      "type": "boolean",
+      "default": "true",
+      "description": "Use active scan to receive scan responses (required by some Victron devices)",
+      "category": "Victron BLE",
+      "capabilities": { "obp60": "true" }
+    },
+    {
+      "name": "vicBleListAll",
+      "label": "List nearby BLE devices",
+      "type": "boolean",
+      "default": "false",
+      "description": "Log up to 20 nearby BLE devices (debug only)",
+      "category": "Victron BLE",
+      "capabilities": { "obp60": "true" }
+    }
+  ]
