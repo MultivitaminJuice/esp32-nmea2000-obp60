@@ -112,6 +112,21 @@ bool GwWifi::connectInternal(){
             return false;
         }
         WiFi.setAutoReconnect(false); //#102
+        if (config->getBool(config->staticIpEnabled)) {
+            IPAddress localIP, gateway, subnet;
+            bool ipOk = localIP.fromString(config->getString(config->staticIpAddress));
+            bool gwOk = gateway.fromString(config->getString(config->staticIpGateway));
+            bool snOk = subnet.fromString(config->getString(config->staticIpSubnet));
+            if (ipOk && gwOk && snOk) {
+                WiFi.config(localIP, gateway, subnet);
+                LOG_DEBUG(GwLog::LOG,"wifiClient: static IP %s, gw %s, subnet %s",
+                    config->getString(config->staticIpAddress).c_str(),
+                    config->getString(config->staticIpGateway).c_str(),
+                    config->getString(config->staticIpSubnet).c_str());
+            } else {
+                LOG_DEBUG(GwLog::ERROR,"wifiClient: invalid static IP config, falling back to DHCP");
+            }
+        }
         wl_status_t rt=WiFi.begin(wifiSSID->asCString(),wifiPass->asCString());
         releaseMutex();
         LOG_DEBUG(GwLog::LOG,"wifiClient connect returns %d",(int)rt);
